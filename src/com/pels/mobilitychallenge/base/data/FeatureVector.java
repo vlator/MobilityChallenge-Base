@@ -10,7 +10,7 @@ public class FeatureVector {
 	private static final String SEP = ",";
 	// Speed Features
 	double avgSpeed;
-	double maxSpeed = -1;
+	double topSpeed = -1;
 
 	// Distance Features
 	double straightDistance = 0;
@@ -39,7 +39,7 @@ public class FeatureVector {
 
 				double speed = distance / time;
 
-				maxSpeed = maxSpeed > speed ? maxSpeed : speed;
+				topSpeed = topSpeed > speed ? topSpeed : speed;
 
 				speedTemp += speed;
 
@@ -58,9 +58,42 @@ public class FeatureVector {
 		}
 	}
 
+	/**
+	 * @return the avgSpeed
+	 */
+	public double getAvgSpeed() {
+		return avgSpeed;
+	}
+
+	/**
+	 * @return the maxSpeed
+	 */
+	public double getTopSpeed() {
+		return topSpeed;
+	}
+
+
+
+	/**
+	 * @return the Distance (actual distance)
+	 */
+	public double getDistance() {
+		return actualDistance;
+	}
+
+
+
+	/**
+	 * @return the Duration (actual duration)
+	 */
+	public double getDuration() {
+		return actualDuration;
+	}
+
+
 	@Override
 	public String toString() {
-		return "" + avgSpeed + SEP + maxSpeed + SEP + straightDistance + SEP
+		return "" + avgSpeed + SEP + topSpeed + SEP + straightDistance + SEP
 				+ actualDistance + SEP + distanceDelta + SEP + actualDuration
 				+ SEP + computedDuration + SEP + durationDelta;
 	}
