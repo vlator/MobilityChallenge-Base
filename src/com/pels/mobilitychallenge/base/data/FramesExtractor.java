@@ -13,9 +13,8 @@ public class FramesExtractor {
 	}
 
 	public List<FramedReadings> getFramedReadings(List<Reading> allFrames) {
-		List<FramedReadings> framedReadings = null;
+		List<FramedReadings> framedReadings = new ArrayList<>();
 		if (!allFrames.isEmpty()) {
-			framedReadings = new ArrayList<FramedReadings>();
 			int i = 0;
 
 			while (i < allFrames.size()) {

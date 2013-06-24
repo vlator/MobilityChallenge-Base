@@ -5,6 +5,8 @@ import java.util.StringTokenizer;
 import com.pels.mobilitychallenge.base.common.MalformedReading;
 
 public class Reading {
+	public static final String HEADER_NO_LABEL = "time,latitude,longitude,elevation,accuracy,bearing,speed";
+	public static final String HEADER_FULL = HEADER_NO_LABEL + ",label";
 
 	private static final String SEP = ",";
 
